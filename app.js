@@ -1,6 +1,6 @@
 //chamando a função gerarNumeroAleatorio() e atribuindo a variavel numeroAleatorio
 let listaNumerosSorteados = [];
-let numeroLimite = 10;
+let numeroLimite = 100;
 let numeroAleatorio = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -8,7 +8,7 @@ let tentativas = 1;
 function alterarTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, "Brazilian Portuguese Female", {rate:1.2});
+    responsiveVoice.speak(texto, "Brazilian Portuguese Female", { rate: 1.2 });
 }
 
 //função criada para limpar o campo input do HTML
@@ -20,7 +20,7 @@ function limparCampo() {
 //função criada para verificar se o valor inserido no imput do HTML é igual ao número gerado pela função gerarNumeroAleatorio()
 function verificarChute() {
     let chute = document.querySelector("input").value;
-    
+
     if (chute == numeroAleatorio) {
         alterarTextoNaTela("h1", "Acertou!");
         palavraTentativa = tentativas > 1 ? "tentativas" : "tentativa"; //analisando se a palavra "tentativas" será no plural
@@ -37,14 +37,14 @@ function verificarChute() {
 }
 
 //função para gerar o número aleatório
-function gerarNumeroAleatorio(){
+function gerarNumeroAleatorio() {
     let numeroGerado = parseInt(Math.random() * numeroLimite + 1);
     let qtdElementosLista = listaNumerosSorteados.length;
-    
+
     if (qtdElementosLista == numeroLimite) {
         listaNumerosSorteados = [];
     }
-    if (listaNumerosSorteados.includes(numeroGerado)){
+    if (listaNumerosSorteados.includes(numeroGerado)) {
         return gerarNumeroAleatorio();
     } else {
         listaNumerosSorteados.push(numeroGerado);
