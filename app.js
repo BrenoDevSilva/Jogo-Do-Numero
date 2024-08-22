@@ -1,6 +1,6 @@
 //chamando a função gerarNumeroAleatorio() e atribuindo a variavel numeroAleatorio
 let listaNumerosSorteados = [];
-let numeroLimite = 100;
+let numeroLimite = 1000;
 let numeroAleatorio = gerarNumeroAleatorio();
 let tentativas = 1;
 
